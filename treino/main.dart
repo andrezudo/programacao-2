@@ -1,6 +1,13 @@
+import 'dart:io';
+
 class Jogador {
   late String nome;
-  late String peca;
+  late String simbolo;
+
+  void pegaNome(){
+    print('Digite seu nome:');
+    nome = stdin.readLineSync()!;
+  }
 }
 
 class Tabuleiro {
@@ -8,10 +15,12 @@ class Tabuleiro {
   List largura = [];
 }
 
-
-
-
 void main() {
+
+  Jogador player1 = new Jogador();
+  player1.pegaNome();
+  String nome = player1.nome;
+  print('O nome do jogador é $nome');
 
   Tabuleiro tabuleiro = new Tabuleiro();
 
