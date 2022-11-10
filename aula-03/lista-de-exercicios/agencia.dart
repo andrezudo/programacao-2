@@ -121,5 +121,8 @@ void main() {
   agencia.agendarViagem(passagem3);
   agencia.listarPassagens();
 
+  agencia.cancelarViagem(passagem3);
+  agencia.listarPassagens();
+
 
 }
