@@ -1,28 +1,17 @@
+//adicionar classe contrato e criar uma lista de contratos na concessionária 
+
 class Cliente {
   late String nome;
   late String cpf;
-  List<Aluguel> listaDeAlugueis = [];
 
   void insereDados(String nome, String cpf){
     this.nome=nome;
     this.cpf=cpf;
   }
 
-  void adicionaAluguel(Aluguel aluguel){
-    listaDeAlugueis.add(aluguel);
-  } 
-
   @override String toString(){
-    return 'Nome: $nome - Codigo: $cpf - aluguéis $listaDeAlugueis';
+    return 'Nome: $nome - Codigo: $cpf';
   }
-
-  void listarAlugueis(){
-    int qtdA=listaDeAlugueis.length;
-    print('$nome');
-    for (var i = 0; i < qtdA; i++) {
-      print(listaDeAlugueis[i]);
-    }
-  } 
 }
 
 class Veiculo {
@@ -53,10 +42,27 @@ class Aluguel {
   }  
 }
 
+class Contaro {
+  late String identificador;
+  late Aluguel aluguel;
+  late Cliente cliente;
+
+  Contaro(String identificador, Aluguel aluguel, Cliente cliente){
+    this.identificador=identificador;
+    this.aluguel=aluguel;
+    this.cliente=cliente;
+  }
+
+  @override String toString(){
+    return 'Identificador: $identificador - Alugel: $aluguel - Cliente: $cliente';
+  }
+}
+
 class Concessionaria {
   late String nome;
   List<Cliente> listaDeClientes = [];
   List<Veiculo> listaDeVeiculos = [];
+  List<Contaro> listaDeContratos = [];
 
   void adicionaNome(String nome){
     this.nome=nome;
@@ -70,6 +76,10 @@ class Concessionaria {
     listaDeVeiculos.add(veiculo);
   }
 
+  void adicionaContrato(Contaro contaro){
+    listaDeContratos.add(contaro);
+  }
+
   void listarClientesEVeiculos(){
     int qtdC=listaDeClientes.length;
     print('Clientes:');
@@ -81,6 +91,12 @@ class Concessionaria {
     print('Veiculos:');
     for (var i = 0; i < qtdV; i++) {
       print(listaDeVeiculos[i]);
+    }
+
+    int qtdCo=listaDeContratos.length;
+    print('Contratos:');
+    for (var i = 0; i < qtdCo; i++) {
+      print(listaDeContratos[i]);
     }
   }
 
@@ -105,11 +121,12 @@ void main() {
   concessionaria1.adicionaNome('Parnalto');
   concessionaria1.adicionaCliente(cliente1);
   concessionaria1.adicionaVeiculo(veiculo1);
-  concessionaria1.listarClientesEVeiculos();
 
   Aluguel aluguel = new Aluguel();
   aluguel.alugarVeiculo('20/11/2022', concessionaria1.listaDeVeiculos[0]);
-  cliente1.adicionaAluguel(aluguel);
-  concessionaria1.listaDeClientes[0].listarAlugueis();
+
+  Contaro contaro = new Contaro('VEI44554', aluguel, cliente1);
+  concessionaria1.adicionaContrato(contaro);
+  concessionaria1.listarClientesEVeiculos();
  
 }
