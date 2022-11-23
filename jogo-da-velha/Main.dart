@@ -23,7 +23,7 @@ class JogoDaVelha {
   void comecaJogo() {
 
     //Campo[][] velha = Campo[3][3];
-    late List<List<Campo>> velha = new Campo();
+    //late List<List<Campo>> velha = new Campo();
     String simboloAtual='X';
     bool game=true;
     String? scan = stdin.readLineSync();
