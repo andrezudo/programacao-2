@@ -21,11 +21,15 @@ class Cliente {
   }
 }
 
-class Conta {
+abstract class Conta {
   late String numero;
   late double saldo;
 
-  void criaNumero(String numero){
+  void criarConta(String umNumero);
+  void sacar(double valor);
+  void depositar(double valor);
+
+  /*void criaNumero(String numero){
     this.numero=numero;
     this.saldo=0;
   }
@@ -36,12 +40,41 @@ class Conta {
 
   void depositar(double valor){
     this.saldo=saldo+valor;
-  }
+  }*/
 
   @override String toString(){
     return 'Número: $numero - Saldo: $saldo';
   }
 }
+
+abstract class Operacao extends Conta{
+  @override
+  late String numero;
+  @override
+  late double saldo;
+
+  @override
+  void criarConta(String umNumero) {
+    this.numero=umNumero;
+    this.saldo=0;
+  }
+
+  @override
+  void depositar(double valor) {
+    this.saldo=saldo+valor;
+  }
+
+  @override
+  void sacar(double valor) {
+    this.saldo=saldo-valor;
+  }
+
+  void render();
+}
+
+class ContaCorrente{}
+class ContaPoupanca{}
+class contaSalario{}
 
 class Banco {
   late String nome;
@@ -65,6 +98,7 @@ class Banco {
 }
 
 void main(List<String> args) {
+  /*
   String nome1 = 'André';
   String cpf1 = '03042678951';
 
@@ -82,4 +116,5 @@ void main(List<String> args) {
   banco1.insereNome('NuBank');
   banco1.adicionarCliente(cliente);
   banco1.listarClientes();
+  */
 }
