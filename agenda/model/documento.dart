@@ -1,4 +1,5 @@
-class Documento {
+abstract class Documento {
   late String numero;
-  Documento(String numer);
+
+  Documento(this.numero);
 }
