@@ -2,7 +2,7 @@ import 'dart:ffi';
 
 import '../pessoa.dart';
 
-class BD {
+abstract class BD {
   late Map<Char,List<Pessoa>> _contatos;
 
   List<Pessoa> buscarPessoa(Pessoa p){
