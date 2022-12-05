@@ -6,21 +6,21 @@ class PessoaDAO implements DAO{
   
   @override
   void adicionar() {
-    // TODO: implement adicionar
+    bd.adicionarPessoa;
   }
   
   @override
   void alterar() {
-    // TODO: implement alterar
+    bd.alterarPessoa;
   }
   
   @override
   void buscar() {
-    // TODO: implement buscar
+    bd.buscarPessoa;
   }
   
   @override
   void remover() {
-    // TODO: implement remover
+    bd.removerPessoa;
   }
 }
