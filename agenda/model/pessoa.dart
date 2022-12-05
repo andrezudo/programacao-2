@@ -7,7 +7,7 @@ import 'telefone.dart';
 abstract class Pessoa {
   late String nome;
   late String apelido;
-  late Char sexo;
+  late String sexo;
   late Telefone _telefone;
   late Endereco _endereco;
   late Documento _documento;
@@ -20,4 +20,8 @@ abstract class Pessoa {
     this._endereco,
     this._documento
   );
+
+  @override String toString(){
+    return 'nome: $nome';
+  }
 }
