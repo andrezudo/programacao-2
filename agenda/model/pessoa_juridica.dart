@@ -7,7 +7,7 @@ import 'telefone.dart';
 
 class PessoaJuridica extends Pessoa{
   PessoaJuridica(
-    String nome, String apelido, Char sexo, Telefone telefone, Endereco endereco, Documento documento
+    String nome, String apelido, String sexo, Telefone telefone, Endereco endereco, Documento documento
   ) 
   : super(
     nome, apelido, sexo, telefone, endereco, documento
