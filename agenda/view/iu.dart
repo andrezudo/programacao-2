@@ -10,6 +10,7 @@ class IU {
   }
   void adicionar(){
     print('Você escolheu adicionar');
+    print('Que tipo de pessoa você quer adicionar?\n 1 - Física \n 2 - Jurídica');
   }
   void listarTodos(){
     print('Você escolheu buscar');

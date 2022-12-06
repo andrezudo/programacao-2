@@ -28,7 +28,7 @@ void main() {
     print('teste');
     if (entrada == '1') {
       iu.adicionar();
-      agendaPessoaFisica.dao.adicionar();
+      //agendaPessoaFisica.dao.adicionar();
     } else if(entrada == 2){
       iu.listarTodos();
     }else if(entrada == 3){
