@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import '../aula-03/lista-de-exercicios/arena.dart';
 import 'controller/agenda_pessoa_fisica.dart';
+import 'controller/agenda_pessoa_juridica.dart';
 import 'model/cpf.dart';
 import 'model/documento.dart';
 import 'model/endereco.dart';
@@ -11,7 +11,6 @@ import 'model/telefone.dart';
 import 'view/iu.dart';
 
 void main() {
-  Agenda agenda = new Agenda();
   AgendaPessoaFisica agendaPessoaFisica = new AgendaPessoaFisica();
   IU iu = new IU();
 
@@ -28,7 +27,14 @@ void main() {
     print('teste');
     if (entrada == '1') {
       iu.adicionar();
-      //agendaPessoaFisica.dao.adicionar();
+      String? entradaTP = stdin.readLineSync();
+      agendaPessoaFisica.dao.adicionar();
+
+      if (entradaTP == 1) {
+        AgendaPessoaFisica agendaPessoaFisica = new AgendaPessoaFisica();
+      }else if(entradaTP == 2){
+        AgendaPessoaJuridica agendaPessoaJuridica = new AgendaPessoaJuridica();
+      }
     } else if(entrada == 2){
       iu.listarTodos();
     }else if(entrada == 3){

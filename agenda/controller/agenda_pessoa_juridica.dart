@@ -1,6 +1,7 @@
 import '../view/agenda.dart';
 import 'dao.dart';
+import 'pessoa_dao.dart';
 
 class AgendaPessoaJuridica extends Agenda{
-  late DAO dao;
+  DAO dao = new PessoaDAO();
 }
