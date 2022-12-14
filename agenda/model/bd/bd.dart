@@ -1,26 +1,33 @@
 import '../pessoa.dart';
 
 abstract class BD {
-  late Map<int,List<Pessoa>> _contatos;
-  late List<Pessoa> _listaDePessoas;
+  Map<int,Pessoa> _contatos = Map();
+  int chave = 0;
   //late Map<int,String> _contatos;
 
-  List<Pessoa> buscarPessoa(Pessoa p){
+  Map<int, Pessoa> buscarPessoa(){
     //List<Pessoa> listaDePessoas = [];
-    return _listaDePessoas;
+    /*for (var i = 0; i < qtd; i++) {
+      print(_contatos[i]);
+      print('\n');
+    }*/
+    //print('Pessoas:');
+    //print('$_contatos \n');
+    return _contatos;
   }
   bool adicionarPessoa(Pessoa p){
-    _listaDePessoas.add(p);
-    int chave = _listaDePessoas.length;
-    _contatos.addAll({chave:_listaDePessoas});
+    chave = chave+1;
+    _contatos.addAll({chave:p});
     return true;
   }
-  bool removerPessoa(Pessoa p){
-    _listaDePessoas.remove(p);
+  bool removerPessoa(int num){
+    //_contatos[num];
+    _contatos.removeWhere((key, value) => key == num);
     return true;
   }
-  bool alterarPessoa(Pessoa p){
-    _listaDePessoas.add(p);
+  bool alterarPessoa(Pessoa p, int num){
+    _contatos.update(num, (existingValue) => p, ifAbsent: () => p,);
+    //_contatos.add(p);
     return true;
   }
 }
