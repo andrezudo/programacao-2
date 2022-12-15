@@ -14,4 +14,9 @@ class Endereco {
     this.estado,
     this.cep
   );
+
+  @override 
+  String toString(){
+    return 'Rua: $rua - Número: $numero - Bairro: $bairro - Cidade: $cidade - Estado: $estado - CEP: $cep';
+  }
 }

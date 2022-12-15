@@ -21,7 +21,8 @@ abstract class Pessoa {
     this._documento
   );
 
-  @override String toString(){
-    return 'nome: $nome';
+  @override 
+  String toString(){
+    return 'Nome: $nome - Apelido: $apelido - Sexo: $sexo - Telefone: $_telefone - Endereco: $_endereco - Documento: $_documento';
   }
 }
