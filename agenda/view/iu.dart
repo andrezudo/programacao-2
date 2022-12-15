@@ -14,11 +14,14 @@ class IU {
   }
   void listarTodos(){
     print('Você escolheu buscar');
+    print('Que tipo de pessoa você quer buscar?\n 1 - Física \n 2 - Jurídica');
   }
   void remover(){
     print('Você escolheu remover');
+    print('Que tipo de pessoa você quer remover?\n 1 - Física \n 2 - Jurídica');
   }
   void alterar(){
     print('Você escolheu alterar');
+    print('Que tipo de pessoa você quer alterar?\n 1 - Física \n 2 - Jurídica');
   }
 }

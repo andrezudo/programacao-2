@@ -2,25 +2,12 @@ import 'dart:io';
 
 import 'controller/agenda_pessoa_fisica.dart';
 import 'controller/agenda_pessoa_juridica.dart';
-import 'model/cpf.dart';
-import 'model/documento.dart';
-import 'model/endereco.dart';
-import 'model/pessoa.dart';
-import 'model/pessoa_fisica.dart';
-import 'model/telefone.dart';
 import 'view/iu.dart';
 
 void main() {
   AgendaPessoaFisica agendaPessoaFisica = new AgendaPessoaFisica();
+  AgendaPessoaJuridica agendaPessoaJuridica = new AgendaPessoaJuridica();
   IU iu = new IU();
-
-  /*
-  CPF cpf = new CPF('06045374339');
-  Endereco endrereco = new Endereco('professor bem', 736, 'centro', 'piripiri', 'Piauí', '64260000');
-  Telefone tel = new Telefone('86994998786', 'Claro');
-  PessoaFisica pessoa = new PessoaFisica('André', 'André', 'M', tel, endrereco, cpf);
-  print(pessoa);
-  */
 
   bool exeucao = true;
   while (exeucao) {
@@ -29,22 +16,39 @@ void main() {
     if (entrada == '1') {
       iu.adicionar();
       String? entradaTP = stdin.readLineSync();
-      agendaPessoaFisica.dao.adicionar();
 
-      if (entradaTP == 1) {
-        //AgendaPessoaFisica agendaPessoaFisica = new AgendaPessoaFisica();
-      }else if(entradaTP == 2){
-        //AgendaPessoaJuridica agendaPessoaJuridica = new AgendaPessoaJuridica();
+      if (entradaTP == '1') {
+        agendaPessoaFisica.dao.adicionar();
+      }else if(entradaTP == '2'){
+        agendaPessoaJuridica.dao.adicionar();
       }
     } else if(entrada == '2'){
       iu.listarTodos();
-      agendaPessoaFisica.dao.buscar();
+      String? entradaTP = stdin.readLineSync();
+
+      if (entradaTP == '1') {
+        agendaPessoaFisica.dao.buscar();
+      }else if(entradaTP == '2'){
+        agendaPessoaJuridica.dao.buscar();
+      }
     }else if(entrada == '3'){
       iu.remover();
-      agendaPessoaFisica.dao.remover();
+      String? entradaTP = stdin.readLineSync();
+
+      if (entradaTP == '1') {
+        agendaPessoaFisica.dao.remover();
+      }else if(entradaTP == '2'){
+        agendaPessoaJuridica.dao.remover();
+      }
     }else if(entrada == '4'){
       iu.alterar();
-      agendaPessoaFisica.dao.alterar();
+      String? entradaTP = stdin.readLineSync();
+
+      if (entradaTP == '1') {
+        agendaPessoaFisica.dao.alterar();
+      }else if(entradaTP == '2'){
+        agendaPessoaJuridica.dao.alterar();
+      }
     }
 
     print('Você deseja continuar? \n S - sim \n N - Não');
