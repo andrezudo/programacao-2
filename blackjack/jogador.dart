@@ -11,6 +11,6 @@ class Jogador {
 
   @override 
   String toString(){
-    return 'Nome: $nome - Soma: $somaDasCartas\n Cartas: $suasCartas';
+    return 'Nome: $nome - Soma: $somaDasCartas - Cartas: \n$suasCartas';
   }
 }

@@ -15,12 +15,12 @@ class Partida {
   void iniciaPartida(){
     ///gera o baralho completo
     baralho.criarBaralho();
-    baralho.mostraBaralho();
+    //baralho.mostraBaralho();
     cartasDoJogo = baralho.listaDeCartas;
   }
 
   void adicionaJogadores(){
-    print('Quantos jogadores irão participar?');
+    print('\n---------------------------------\nQuantos jogadores irão participar?');
     String? n = stdin.readLineSync();
     int qtdJ = int.parse(n!);
 
@@ -58,6 +58,7 @@ class Partida {
     for (var i = 0; i < qtdJ; i++) {
       var nomeJ = listaDeJogadores[i].nome;
       int condicao = 1;
+      print('\n---------------------------------\n');
       while (condicao == 1) {
         print(listaDeJogadores[i]);
         print('Sua vez de jogar $nomeJ');
@@ -77,10 +78,16 @@ class Partida {
       }
 
     }
+  }
+
+  void mostraResultado(){
+    print('\n---------------------------------\n');
     if (listaDeVencedores.length == 1) {
       print('Vencedor:\n $listaDeVencedores');
+      print('\nJogadores:\n $listaDeJogadores');
     }else if(listaDeVencedores.length > 1){
       print('Vencedores:\n $listaDeVencedores');
+      print('\nJogadores:\n $listaDeJogadores');
     }else{
       print('A partida saiu empatada! Veja os jogadores e suas pontuações:\n $listaDeJogadores');
     }
@@ -92,5 +99,12 @@ class Partida {
 
     //var tamB = cartasDoJogo.length;
     //print('$tamB - $cartasDoJogo');
+  }
+
+
+
+  @override 
+  String toString(){
+    return '\n---------------------------------\nJogadores: $listaDeJogadores \nVencedores: $listaDeVencedores\n---------------------------------\n';
   }
 }
