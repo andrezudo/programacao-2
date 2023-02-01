@@ -1,5 +1,5 @@
-import 'cliente.dart';
-import 'pizza.dart';
+import 'pizzaria/cliente.dart';
+import 'pizzaria/pizza.dart';
 
 class Facade {
   static Facade _instance = Facade._();
