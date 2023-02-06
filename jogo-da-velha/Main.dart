@@ -7,7 +7,7 @@ void main() {
   jogo.pegaProximoCaractere();
   */
 
-  Jogo jogo = new Jogo();
+  Jogo jogo = Jogo.getInstance();
   jogo.jogar();
 }
 

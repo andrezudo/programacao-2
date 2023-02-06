@@ -1,7 +1,20 @@
 import 'dart:io';
 import 'partida.dart';
 
+//Singleton aplicado na classe Jogo
 class Jogo {
+  
+  static Jogo _jogo = Jogo._();
+  
+  Jogo._();
+
+  static Jogo getInstance(){
+    if(_jogo == null){
+      _jogo = Jogo._();
+    }
+
+    return _jogo;
+  }
 
   void jogar(){
     Partida partida = new Partida();
