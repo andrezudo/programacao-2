@@ -23,6 +23,7 @@ class Jogo {
 
     partidasJogadas.add(partida);
 
+    /*
     print('Deseja continuar jogando? \n1 - Sim \n2 - Não');
     String? n = stdin.readLineSync();
     int number = int.parse(n!);
@@ -32,5 +33,6 @@ class Jogo {
     }else{
       print('Obrigado!!!');
     }
+    */
   }
 }
