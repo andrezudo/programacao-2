@@ -1,11 +1,12 @@
 import 'dart:io';
-import 'partida.dart';
+import 'builder/partida_builder.dart';
+//import 'partida.dart';
 
 //Singleton aplicado na classe Jogo
 class Jogo {
   
   static Jogo _jogo = Jogo._();
-  List<Partida> partidasJogadas = [];
+  List<PartidaBuilder> partidasJogadas = [];
   
   Jogo._();
 
@@ -18,10 +19,17 @@ class Jogo {
   }
 
   void jogar(){
-    Partida partida = new Partida();
-    partida.pegaProximoCaractere();
+    //Partida partida = new Partida();
 
-    partidasJogadas.add(partida);
+    PartidaBuilder partidaBuilder = PartidaBuilder(['1', '2', '3', '4', '5', '6', '7', '8', '9'], ['012', '048', '036', '147', '246', '258', '345', '678']);
+    
+    Partida partida = new Partida(partidaBuilder);
+
+    partidaBuilder.pegaProximoCaractere();
+
+    //partida.pegaProximoCaractere();
+
+    partidasJogadas.add(partidaBuilder);
 
     /*
     print('Deseja continuar jogando? \n1 - Sim \n2 - Não');

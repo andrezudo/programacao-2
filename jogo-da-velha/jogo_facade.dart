@@ -23,7 +23,8 @@ class JogoFacade {
     for (var i = 0; i < np; i++) {
       var n = i+1;
       print('\nPartida $n:');
-      var valores = _jogo.partidasJogadas[i].valores;
+      var valores = _jogo.partidasJogadas[i].retornaValores();
+      _jogo.partidasJogadas[i].retornaVencedor();
       _jogo.partidasJogadas[i].tabuleiro.gerarTabuleiro(valores);
     }
   }

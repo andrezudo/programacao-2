@@ -29,7 +29,8 @@ class Jogo {
   void mostraResultados(){
     var qtdJ = partidasJogadas.length;
     for (var i = 0; i < qtdJ; i++) {
-      print('\n---------------------------------\nPartida($i+1)');
+      var n = i + 1;
+      print('\n---------------------------------\nPartida $n');
       partidasJogadas[i].mostraResultado();
     }
   }
